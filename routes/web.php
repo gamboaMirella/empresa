@@ -1,5 +1,5 @@
 <?php
-
+// routes/web.php
 use Illuminate\Support\Facades\Route;
 
 // Ruta para la página de inicio
@@ -7,25 +7,41 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-// Ruta para la página de servicios con parámetro opcional
-Route::get('/servicios/{nombre?}', function ($nombre = null) {
-    return view('servicios', ['nombre' => $nombre]);
-})->where('nombre', '[a-zA-Z]+')->name('servicios');
+// Rutas para Servicios
+Route::get('/servicios', function () {
+    return view('servicios.index');
+})->name('servicios.index');
 
-// Ruta para la página de proyectos con parámetro opcional
-Route::get('/proyectos/{nombre?}', function ($nombre = null) {
-    return view('proyectos', ['nombre' => $nombre]);
-})->where('nombre', '[a-zA-Z]+')->name('proyectos');
+Route::get('/servicios/{nombre}', function ($nombre) {
+    return view('servicios.show', ['nombre' => $nombre]);
+})->where('nombre', '[a-zA-Z]+')->name('servicios.show');
 
-// Ruta para la página de clientes con parámetro opcional
-Route::get('/clientes/{nombre?}', function ($nombre = null) {
-    return view('clientes', ['nombre' => $nombre]);
-})->where('nombre', '[a-zA-Z]+')->name('clientes');
+// Rutas para Proyectos
+Route::get('/proyectos', function () {
+    return view('proyectos.index');
+})->name('proyectos.index');
 
-// Ruta para la página de blog con parámetro opcional
-Route::get('/blog/{id?}', function ($id = null) {
-    return view('blog', ['id' => $id]);
-})->where('id', '[0-9]+')->name('blog');
+Route::get('/proyectos/{nombre}', function ($nombre) {
+    return view('proyectos.show', ['nombre' => $nombre]);
+})->where('nombre', '[a-zA-Z]+')->name('proyectos.show');
+
+// Rutas para Clientes
+Route::get('/clientes', function () {
+    return view('clientes.index');
+})->name('clientes.index');
+
+Route::get('/clientes/{nombre}', function ($nombre) {
+    return view('clientes.show', ['nombre' => $nombre]);
+})->where('nombre', '[a-zA-Z]+')->name('clientes.show');
+
+// Rutas para Blog
+Route::get('/blog', function () {
+    return view('blog.index');
+})->name('blog.index');
+
+Route::get('/blog/{id}', function ($id) {
+    return view('blog.show', ['id' => $id]);
+})->where('id', '[0-9]+')->name('blog.show');
 
 // Ruta para la página de contacto
 Route::get('/contacto', function () {

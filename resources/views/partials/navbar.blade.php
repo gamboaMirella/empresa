@@ -8,10 +8,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('servicios') }}">Servicios</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('proyectos') }}">Proyectos</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('clientes') }}">Clientes</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('blog') }}">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('servicios.index') }}">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('proyectos.index') }}">Proyectos</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('clientes.index') }}">Clientes</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('blog.index') }}">Blog</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('contacto') }}">Contacto</a></li>
         </ul>
     </div>
